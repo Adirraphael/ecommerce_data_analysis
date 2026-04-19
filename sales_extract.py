@@ -219,7 +219,7 @@ def generate_orders_and_items(order_count, customer_ids, products, start_order_i
         for prod in order_products:
             product_id, _, _, price, _ = prod
             qty = random.randint(1, 4)
-            unit_price = price
+            unit_price = float(price)
             subtotal = round(unit_price * qty, 2)
             total += subtotal
             order_item_rows.append((item_id, order_id, product_id, qty, unit_price, subtotal))
