@@ -1,0 +1,43 @@
+name: Sales Pipeline                                               
+   
+  on:                                                                
+    schedule:     
+       - cron: '0 8 1,15 * *'
+    workflow_dispatch:           
+   
+  jobs:                                                              
+    run_pipeline: 
+      runs-on: ubuntu-latest
+
+      steps:
+        - name: Checkout code
+          uses: actions/checkout@v3                                  
+   
+        - name: Set up Python                                        
+          uses: actions/setup-python@v4
+          with:
+            python-version: '3.11'
+
+        - name: Install Python dependencies                          
+          run: pip install -r requirements.txt
+                                                                     
+        - name: Run extract script
+          env:
+            SNOWFLAKE_ACCOUNT: ${{ secrets.SNOWFLAKE_ACCOUNT }}
+            SNOWFLAKE_USER: ${{ secrets.SNOWFLAKE_USER }}            
+            SNOWFLAKE_PASSWORD: ${{ secrets.SNOWFLAKE_PASSWORD }}
+            SNOWFLAKE_WAREHOUSE: ${{ secrets.SNOWFLAKE_WAREHOUSE }}  
+          run: python sales_extract.py
+                                                                     
+        - name: Install dbt dependencies
+          run: pip install dbt-snowflake                             
+                  
+        - name: Run dbt
+          env:
+            SNOWFLAKE_ACCOUNT: ${{ secrets.SNOWFLAKE_ACCOUNT }}      
+            SNOWFLAKE_USER: ${{ secrets.SNOWFLAKE_USER }}
+            SNOWFLAKE_PASSWORD: ${{ secrets.SNOWFLAKE_PASSWORD }}    
+            SNOWFLAKE_WAREHOUSE: ${{ secrets.SNOWFLAKE_WAREHOUSE }}  
+          run: |
+            cd sales_dbt                                             
+            dbt run
