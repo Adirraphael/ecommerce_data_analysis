@@ -1,22 +1,8 @@
-# Ecommerce Sales Analysis                                         
-  A personal project to build an end-to-end sales analytics pipeline 
-  using modern data stack tools.
+# Ecommerce Sales Analysis                                        
 
-  ## What this project does
+A personal project to build an end-to-end sales analytics pipeline using modern data stack tools — from synthetic data generation to a fully interactive Tableau dashboard. I built a scalable ELT pipeline using Snowflake as the cloud data warehouse, dbt for dimensional modeling and data transformation, and GitHub Actions for workflow automation.
 
-  I generated a synthetic ecommerce dataset and loaded it into       
-  Snowflake, then built a dbt data model on top of it, and plan to
-  visualize everything in Tableau.                                   
-                  
-  ## Tech Stack
-
-  - **Python** — generated and loaded fake ecommerce data into       
-  Snowflake
-  - **Snowflake** — cloud data warehouse storing raw and transformed 
-  data                                                               
-  - **dbt** — data transformation and modeling
-  - **Tableau** — dashboarding and visualization (coming soon)       
-                  
+The pipeline ingests synthetic ecommerce data, executes incremental loads, applies business logic through staging and marts layers, and surfaces insights via interactive Tableau dashboards with cross-filtering capabilities.                                                                          
   ## Data Pipeline
 
   Raw data (Python) → Snowflake (ECOMMERCE_RAW) → dbt staging → dbt  
