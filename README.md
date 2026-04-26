@@ -1,7 +1,7 @@
 # Ecommerce Sales Analysis                                         
   A personal project to build an end-to-end sales analytics pipeline 
   using modern data stack tools.
-                                                                     
+
   ## What this project does
 
   I generated a synthetic ecommerce dataset and loaded it into       
