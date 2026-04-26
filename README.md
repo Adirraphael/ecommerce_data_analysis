@@ -10,16 +10,16 @@ The pipeline ingests synthetic ecommerce data, executes incremental loads, appli
                                                                      
   ## Data Model   
                                                                      
-  **Staging layer** — cleans and standardizes the 4 raw tables:
-  - stg_customers — customer info with full_name added             
-  - `stg_products` — products with margin and margin_pct calculated  
-  - `stg_orders` — orders with order_date cast as date               
-  - `stg_order_items` — order line items                             
+  **Staging layer** - cleans and standardizes the 4 raw tables:
+  - stg_customers - customer info with full_name added             
+  - stg_products - products with margin and margin_pct calculated  
+  - stg_orders - orders with order_date cast as date               
+  - stg_order_items - order line items                             
                                                                      
-  **Marts layer** — business-facing tables:
-  - `fct_orders` — one row per order                                 
-  - `fct_order_items` — one row per order line item with product
+  **Marts layer** - business-facing tables:
+  - fct_orders - one row per order                                 
+  - fct_order_items - one row per order line item with product
   details                                                            
-  - `dim_customers` — customers with aggregated order stats
-  - `dim_products` — product catalog with pricing and margin         
+  - dim_customers - customers with aggregated order stats
+  - dim_products - product catalog with pricing and margin         
                   
