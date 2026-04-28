@@ -1,6 +1,6 @@
 # Ecommerce Sales Analysis                                        
 
-A personal project to build an end-to-end sales analytics pipeline using modern data stack tools, from synthetic data generation to a fully interactive Tableau dashboard. I built a scalable ELT pipeline using Snowflake as the cloud data warehouse, dbt for dimensional modeling and data transformation, and GitHub Actions for workflow automation.
+A personal project to build an end-to-end sales analytics pipeline using modern data stack tools, from synthetic data generation to a fully interactive, high level Tableau dashboard. I built a scalable ELT pipeline using Snowflake as the cloud data warehouse, dbt for dimensional modeling and data transformation, and GitHub Actions for workflow automation.
 
 The pipeline ingests synthetic ecommerce data, executes incremental loads, applies business logic through staging and marts layers, and surfaces insights via interactive Tableau dashboards with cross-filtering capabilities.                                                                          
   ## Data Pipeline
